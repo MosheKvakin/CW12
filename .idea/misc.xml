@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/drawable/ic_delete.xml" value="0.2165" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/layout/activity_main.xml" value="0.2238372093023256" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/layout/activity_main_previous.xml" value="0.1707193515704154" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/layout/content_main.xml" value="0.1" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/layout/fragment_add.xml" value="0.209375" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/layout/fragment_add_previous.xml" value="0.1707193515704154" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/layout/fragment_check.xml" value="0.33" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/layout/fragment_first.xml" value="0.14628623188405798" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/layout/fragment_list.xml" value="0.1" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/layout/fragment_list_previous.xml" value="0.1707193515704154" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/layout/fragment_update.xml" value="0.18541666666666667" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/layout/fragment_update_previous.xml" value="0.1707193515704154" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/layout/person_data_row.xml" value="0.23376623376623376" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/layout/person_data_row_previous.xml" value="0.1707193515704154" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/menu/main_menu.xml" value="0.209375" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/menu/menu_main.xml" value="0.209375" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3225" />
+        <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3225" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
