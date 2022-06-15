@@ -31,7 +31,8 @@ data class ItemsEgr(
 @Serializable
 data class Egr(
     @SerialName("ЮЛ")
-    val ulItem: List<UlItem> = ArrayList()
+   //val ulItem: List<UlItem> = ArrayList()
+    val ulItem: UlItem
 
     //@SerialName("ФСС")
     //val ipItemFSS: FSS?,

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/personrow"
@@ -51,8 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:layout_marginBottom="30dp"
-        android:textSize="25sp"
         android:text="26"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/dfName"
         app:layout_constraintHorizontal_bias="0.0"
@@ -64,7 +63,7 @@
         android:id="@+id/update"
         android:layout_width="92dp"
         android:layout_height="36dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="28dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/purple_200"
         android:text="Update"
@@ -72,7 +71,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188"
+        app:layout_constraintVertical_bias="0.17"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -88,17 +87,31 @@
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="@+id/update" />
 
+
     <Button
         android:id="@+id/check"
-        android:layout_width="94dp"
-        android:layout_height="39dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="95dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="4dp"
         android:backgroundTint="@color/teal_700"
         android:text="Check"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/deletebtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/deletebtn" />
+
+    <Button
+        android:id="@+id/checkTIN"
+        android:layout_width="114dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="CheckTIN"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="parent" />
 
 

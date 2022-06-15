@@ -47,11 +47,14 @@ class ListAdapter(private val context: Context, private var mainViewModel: MainV
         }
 
         holder.itemView.check.setOnClickListener {
-            //val action = ListFragmentDirections.actionListFragmentToUpdateFragment(item)
             val action = ListFragmentDirections.actionListFragmentToCheckFragment(item)
             holder.itemView.findNavController().navigate(action)
         }
 
+        holder.itemView.checkTIN.setOnClickListener {
+            val action = ListFragmentDirections.actionListFragmentToChecktinFragment(item)
+            holder.itemView.findNavController().navigate(action)
+        }
 
         holder.itemView.deletebtn.setOnClickListener {
             val builder = AlertDialog.Builder(context)
