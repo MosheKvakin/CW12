@@ -12,8 +12,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.cw1.ViewModel.MainViewModel
 import com.example.cw1.data.Abonent
+import com.example.cw1.model.chckTIN
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
+//mport com.example.cw1.model
 
 class AddFragment : Fragment() {
 
@@ -42,7 +44,7 @@ class AddFragment : Fragment() {
         val dfFlagLive = adddfFlagLive.text
 
         if(inputCheck(dfName,dfInn,dfFlagLive)){
-
+          // val check =        chckTIN().checkTin( dfInn )
             val abonent = Abonent(0,dfName,dfInn,Integer.parseInt(dfFlagLive.toString()))
             mainViewModel.addAbonent(abonent)
 
@@ -55,6 +57,9 @@ class AddFragment : Fragment() {
 
     private fun inputCheck(dfName: String, dfInn: String, dfFlagLive: Editable):Boolean{
         // Здесь проверка на валидность ИНН
-        return !(TextUtils.isEmpty(dfName) && TextUtils.isEmpty(dfInn) /*&& dfFlagLive.isEmpty()*/)
+       //val check =  com.example.cw1.CheckTIN.checkTIN( dfInn /*"2310171088"*/)
+        val check =        chckTIN().checkTin( dfInn )
+
+        return !(TextUtils.isEmpty(dfName) && TextUtils.isEmpty(dfInn) && !check)
     }
 }

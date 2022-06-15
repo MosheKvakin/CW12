@@ -21,6 +21,13 @@
         <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/menu/menu_main.xml" value="0.209375" />
         <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3225" />
         <entry key="..\:/Kotlin_study/MyRepo2/CW12/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3225" />
+        <entry key="..\:/kotlin_study/MyRepo3/CW12/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/kotlin_study/MyRepo3/CW12/app/src/main/res/layout/fragment_add.xml" value="0.1" />
+        <entry key="..\:/kotlin_study/MyRepo3/CW12/app/src/main/res/layout/fragment_check.xml" value="0.2971014492753623" />
+        <entry key="..\:/kotlin_study/MyRepo3/CW12/app/src/main/res/layout/fragment_check_tin.xml" value="0.36739659367396593" />
+        <entry key="..\:/kotlin_study/MyRepo3/CW12/app/src/main/res/layout/fragment_list.xml" value="0.1" />
+        <entry key="..\:/kotlin_study/MyRepo3/CW12/app/src/main/res/layout/fragment_update.xml" value="0.2971014492753623" />
+        <entry key="..\:/kotlin_study/MyRepo3/CW12/app/src/main/res/layout/person_data_row.xml" value="0.2264151024877837" />
       </map>
     </option>
   </component>

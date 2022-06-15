@@ -19,11 +19,13 @@ import com.example.cw1.data.Abonent
 import io.ktor.client.request.*
 import kotlinx.android.synthetic.main.fragment_check.*
 import kotlinx.android.synthetic.main.fragment_check.view.*
+import kotlinx.android.synthetic.main.fragment_check_tin.*
+import kotlinx.android.synthetic.main.fragment_check_tin.view.*
 import kotlinx.coroutines.*
 import kotlinx.serialization.SerialName
 
 
-class CheckFragment : Fragment() {
+class CheckFragmentTIN : Fragment() {
 
     lateinit var mainViewModel: MainViewModel
 
@@ -34,14 +36,14 @@ class CheckFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_check, container, false)
+        val view =  inflater.inflate(R.layout.fragment_check_tin, container, false)
 
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        //view.checkdfName.setText(args.currentAbonent.dfName)
-        //view.checkdfInn.setText(args.currentAbonent.dfInn)
+        view.checkeddfName.setText(args.currentAbonent.dfName)
+        view.checkeddfInn.setText(args.currentAbonent.dfInn)
 
 
-        view.checkbutton.setOnClickListener {
+        view.checktinbutton.setOnClickListener {
             checkAbonentData()
         }
 
@@ -52,52 +54,29 @@ class CheckFragment : Fragment() {
 
     private fun checkAbonentData() {
 
-        val nam = checkNam.text.toString()
-        val fam = checkFam.text.toString()
-        val otch = checkOtch.text.toString()
-        val bdate = checkBdate.text.toString()
-        val doctype = checkDoctype.text.toString()
-        val docno = checkDocno.text.toString()
+        val  checkeddfInn = checkeddfInn.text.toString()
+
 
 
 
 
         CoroutineScope(SupervisorJob() + Dispatchers.IO).launch  {
             println("Корутина выполняется на потоке: ${Thread.currentThread().name}")
-           /* val innId = "2310171088" //dfInn
 
-            println("innId:"+ innId)
-            val itemsEgr = Api().getItemEgr(innId)
-            println("res1:${itemsEgr.items[0].ulItem[0].kpp}")
-            view?.checkdfName?.setText("numtel1:"+itemsEgr.items[0].ulItem[0].kpp)
-            */
+            //val innId = "2310171088" //dfInn
+            //checkeddfInn
 
-           /* val passportExpire: PassportExpire = Api().getPassport("0317741452")
-            println("res:"+ passportExpire.result)
-          val tinPerson : TINPerson = Api().getTINPerson()
-              println("res:"+ tinPerson.result)
-
-            */
-
-            //val inn: FSS = Api().getFSS(innId)
-            /*poster.load("${BuildConfig.API_IMAGE_BASE_URL}${movie.posterPath}") {
-                transformations(RoundedCornersTransformation(16f))
-            }
-
-             */
-
-            var tin:String;
-            val tinPersonItems : TINPersonItems = Api().getTINPerson2(fam,nam,otch,bdate,doctype,docno)
-            if (tinPersonItems.results.size > 0) {
-                //println("res1:${tinPersonItems.results}")
-                tin = "ИНН:" + tinPersonItems.results[0].result.toString()
+            val itemsEgr = Api().getItemEgr(checkeddfInn)
+            val tin: String
+            if (itemsEgr.items.size > 0) {
+                tin = "КПП:" + itemsEgr.items[0].ulItem.kpp.toString()
             }
             else
             {
-                tin = "Информация об ИНН не найдена. Рекомендуем проверить правильность введённых данных и повторить попытку поиска."
+                tin = "Информация об КПП не найдена. Рекомендуем проверить правильность введённых данных и повторить попытку поиска."
             }
             withContext(Dispatchers.Main) {
-                view?.checkResult?.setText(tin)
+                view?.checktinResult?.setText(tin)
             }
 
         }
@@ -121,7 +100,6 @@ class CheckFragment : Fragment() {
     private fun inputCheck(
         dfName: String ,dfInn : String
        ):Boolean{
-
         return !(TextUtils.isEmpty(dfName) && TextUtils.isEmpty(dfInn) /*&& dfFlagLiveData.isEmpty()*/)
     }
 }

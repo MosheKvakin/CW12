@@ -69,13 +69,13 @@ class ListFragment : Fragment(){
 
             mainViewModel.deleteAllAbonent()
 
-            Toast.makeText(requireContext(),"Successfully Removed everything"
+            Toast.makeText(requireContext(),"Successfully removed everything"
                 , Toast.LENGTH_SHORT).show()
 
         }
         builder.setNegativeButton("No"){_,_ -> }
-        builder.setTitle("Delete Everything?")
-        builder.setMessage("Are You Sure , You Want To Delete Everything?")
+        builder.setTitle("Delete everything?")
+        builder.setMessage("Are you sure , You want to delete everything?")
         builder.create().show()
     }
 

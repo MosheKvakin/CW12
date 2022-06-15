@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_listFragment_to_checkFragment"
             app:destination="@id/checkFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_checktinFragment"
+            app:destination="@id/checktinFragment" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
@@ -53,5 +56,16 @@
             android:name="currentAbonent"
             app:argType="com.example.cw1.data.Abonent" />
     </fragment>
-
+    <fragment
+        android:id="@+id/checktinFragment"
+        android:name="com.example.cw1.CheckFragmentTIN"
+        android:label="CheckTIN"
+        tools:layout="@layout/fragment_check_tin" >
+        <action
+            android:id="@+id/action_checktinFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="currentAbonent"
+            app:argType="com.example.cw1.data.Abonent" />
+    </fragment>
 </navigation>
