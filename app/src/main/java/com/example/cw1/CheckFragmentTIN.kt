@@ -45,7 +45,6 @@ class CheckFragmentTIN : Fragment() {
             checkAbonentData()
         }
 
-
         return view
     }
 
