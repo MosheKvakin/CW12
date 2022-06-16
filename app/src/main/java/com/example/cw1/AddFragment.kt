@@ -15,6 +15,13 @@ import com.example.cw1.data.Abonent
 import com.example.cw1.model.chckTIN
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
+import java.util.concurrent.atomic.AtomicBoolean
+import java.util.concurrent.atomic.AtomicLong
+
 //mport com.example.cw1.model
 
 class AddFragment : Fragment() {
@@ -44,11 +51,17 @@ class AddFragment : Fragment() {
         val dfFlagLive = adddfFlagLive.text
 
         if(inputCheck(dfName,dfInn,dfFlagLive)){
-          // val check =        chckTIN().checkTin( dfInn )
+        /*    var check = AtomicBoolean();
+           //var check: Boolean
+           //=   chckTIN().checkTin( dfInn )
+            CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
+              check.set( chckTIN().checkTinSc(dfInn).await())
+            }*/
+
             val abonent = Abonent(0,dfName,dfInn,Integer.parseInt(dfFlagLive.toString()))
             mainViewModel.addAbonent(abonent)
 
-            Toast.makeText(requireContext(),"Successfully Added",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),"Successfully added",Toast.LENGTH_SHORT).show()
 
             findNavController().navigate(R.id.action_addFragment_to_listFragment)
         }
@@ -59,7 +72,6 @@ class AddFragment : Fragment() {
         // Здесь проверка на валидность ИНН
        //val check =  com.example.cw1.CheckTIN.checkTIN( dfInn /*"2310171088"*/)
         val check =        chckTIN().checkTin( dfInn )
-
         return !(TextUtils.isEmpty(dfName) && TextUtils.isEmpty(dfInn) && !check)
     }
 }

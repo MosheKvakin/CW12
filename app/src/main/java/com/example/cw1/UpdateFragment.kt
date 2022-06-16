@@ -1,6 +1,7 @@
 package com.example.cw1
 
 import android.os.Bundle
+import android.text.Editable
 import android.text.TextUtils
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -10,8 +11,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.cw1.ViewModel.MainViewModel
 import com.example.cw1.data.Abonent
+import com.example.cw1.model.chckTIN
 import kotlinx.android.synthetic.main.fragment_update.*
 import kotlinx.android.synthetic.main.fragment_update.view.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
+import java.util.concurrent.atomic.AtomicBoolean
 
 
 class UpdateFragment : Fragment() {
@@ -78,6 +85,12 @@ class UpdateFragment : Fragment() {
     private fun inputCheck(
         dfName: String ,dfInn : String,dfFlagLiveData : Int
        ):Boolean{
-        return !(TextUtils.isEmpty(dfName) && TextUtils.isEmpty(dfInn) /*&& dfFlagLiveData.isEmpty()*/)
+            var check = AtomicBoolean()
+            CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
+                     check.set( chckTIN().checkTinSc(dfInn).await())
+                   }
+        return !(TextUtils.isEmpty(dfName) && TextUtils.isEmpty(dfInn) && !check.get())
     }
+
+
 }

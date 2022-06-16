@@ -35,9 +35,7 @@ class CheckFragmentTIN : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_check_tin, container, false)
-
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         view.checkeddfName.setText(args.currentAbonent.dfName)
         view.checkeddfInn.setText(args.currentAbonent.dfInn)
