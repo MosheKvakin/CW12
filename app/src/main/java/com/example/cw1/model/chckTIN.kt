@@ -1,10 +1,19 @@
 package com.example.cw1.model
 
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+
 class chckTIN {
 
     val MULT_N1 = arrayOf(7, 2, 4, 10, 3, 5, 9, 4, 6, 8)
     val MULT_N2 = arrayOf(3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8)
     val MULT_N = arrayOf(2, 4, 10, 3, 5, 9, 4, 6, 8)
+
+
+    fun checkTinSc(innStr: String) =  GlobalScope.async {
+        var valid = checkTin(innStr)
+        return@async valid
+    }
 
     fun checkTin(innStr: String): Boolean {
         val valid: Boolean
@@ -25,7 +34,7 @@ class chckTIN {
         return valid
     }
 
-    fun stringToIntArray(src: String): Array<Int> {
+    private fun stringToIntArray(src: String): Array<Int> {
         val chars = src.toCharArray()
         val digits = ArrayList<Int>()
         for (aChar in chars) {
@@ -34,7 +43,7 @@ class chckTIN {
         return digits.toTypedArray()
     }
 
-    fun getChecksum(digits: Array<Int>, multipliers: Array<Int>): Int {
+    private fun getChecksum(digits: Array<Int>, multipliers: Array<Int>): Int {
         var checksum = 0
         for (i in multipliers.indices) {
             checksum += digits[i] * multipliers[i]
